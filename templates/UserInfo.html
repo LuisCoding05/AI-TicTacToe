@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadísticas del Usuario</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/stats.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+  <div class="container">
+    <h1>Estadísticas de {{ user.username }}</h1>
+    <div class="stats">
+      <div class="stat">
+        <h2>Victorias</h2>
+        <p id="victorias">{{ user.victorias }}</p>
+      </div>
+      <div class="stat">
+        <h2>Derrotas</h2>
+        <p id="derrotas">{{ user.derrotas }}</p>
+      </div>
+      <div class="stat">
+        <h2>Empates</h2>
+        <p id="empates">{{ user.empates }}</p>
+      </div>
+      <div class="stat">
+        <h2>Partidas totales</h2>
+        <p id="TotalMatches"></p>
+      </div>
+      <div class="stat">
+        <h2>Porcentaje de victorias</h2>
+        <p id="winRate"></p>
+      </div>
+    </div>
+  </div>
+  {% include 'footer.html' %}
+  <script>
+    const partidasTotales = document.getElementById('TotalMatches');
+    const victorias = document.getElementById('victorias').textContent;
+    const derrotas = document.getElementById('derrotas').textContent;
+    const empates = document.getElementById('empates').textContent;
+    const winRate = document.getElementById('winRate');
+    const total = parseInt(victorias) + parseInt(derrotas) + parseInt(empates);
+    partidasTotales.textContent = total;
+    const rate = total > 0 ? (parseInt(victorias) / total * 100).toFixed(2) : 0;
+    winRate.textContent = `${rate}%`;
+  </script>
+</body>
+</html>

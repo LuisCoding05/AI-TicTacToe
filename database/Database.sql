@@ -1,4 +1,4 @@
--- Host: localhost    Database: flaskproyect
+-- Host: localhost    Database: pythonflask
 -- ------------------------------------------------------
 -- Server version	8.0.40
 

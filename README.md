@@ -31,7 +31,7 @@ Abre el archivo `config.py` y asegúrate de que la configuración de conexión c
 > **ℹ️ Info:** Actualiza los siguientes valores en `config.py`:
 > - **Host:** El nombre del host (generalmente `localhost` para desarrollo local).
 > - **Nombre de usuario y contraseña:** Tus credenciales de MySQL.
-> - **Nombre de la base de datos:** El nombre de la base de datos que importaste anteriormente.(La mia la llamé flaskproyect)
+> - **Nombre de la base de datos:** El nombre de la base de datos que importaste anteriormente.(La mia la llamé pythonflask)
 > - **¡¡¡IMPORTANTE!!!** Todas o casi todas las contraseñas cifradas del backup son: "1234", si quieres cambiarlas puedes usar el passGenerator.py y asignar la que desees
 
 ---
